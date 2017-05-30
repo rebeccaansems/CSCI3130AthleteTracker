@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "478486174072",
+    "firebase_url": "https://csci3130athletetracker.firebaseio.com",
+    "project_id": "csci3130athletetracker",
+    "storage_bucket": "csci3130athletetracker.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:478486174072:android:c5e5d678941d1047",
+        "android_client_info": {
+          "package_name": "com.csci3130.athletetracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "478486174072-89k2mtb7l77qkihsh7pf5vbjb81oc5tc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.csci3130.athletetracker",
+            "certificate_hash": "0d18f46be58bebcd602813fa2254b2f2ca854f81"
+          }
+        },
+        {
+          "client_id": "478486174072-qc2an5obnjk872fuktvrd3itpafl8l26.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAodlOFAGMS9imGaWFJYdfkxug9EX15ySU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "478486174072-qc2an5obnjk872fuktvrd3itpafl8l26.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
