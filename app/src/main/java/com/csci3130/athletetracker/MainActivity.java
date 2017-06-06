@@ -21,8 +21,32 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    public void OpenedMainScreen(){
+        final Button goToRangeScreenButton = (Button)findViewById(R.id.b_gotoSetRangeScreen);
+        goToRangeScreenButton.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                gotoRangeScreen();
+            }
+        });
+    }
+
+    public void OpenedRangeScreen(){
+        final Button goToMainScreenFromRangeScreenButton = (Button)findViewById(R.id.b_rangeBackToMainScreen);
+        goToMainScreenFromRangeScreenButton.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                goToMainScreen();
+            }
+        });
+    }
+
     public void gotoRangeScreen(){
         setContentView(R.layout.setting_range);
+        OpenedRangeScreen();
+    }
+
+    public void goToMainScreen(){
+        setContentView(R.layout.activity_main);
+        OpenedMainScreen();
     }
 
 

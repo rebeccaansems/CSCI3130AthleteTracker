@@ -17,6 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Heart Rate"
+        android:textAlignment="center"
         android:textSize="24sp" />
 
     <TextView
@@ -83,4 +84,10 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="number" />
+
+    <Button
+        android:id="@+id/b_rangeBackToMainScreen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Return to Main" />
 </LinearLayout>
