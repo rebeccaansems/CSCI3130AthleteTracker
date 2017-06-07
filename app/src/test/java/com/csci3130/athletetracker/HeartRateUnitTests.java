@@ -1,5 +1,7 @@
 package com.csci3130.athletetracker;
 
+import com.wolkabout.hexiwear.AthleteHeartRate;
+
 import org.junit.Before;
 import org.junit.Test;
 
