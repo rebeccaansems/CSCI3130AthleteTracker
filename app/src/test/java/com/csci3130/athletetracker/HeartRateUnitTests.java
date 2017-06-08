@@ -61,5 +61,12 @@ public class HeartRateUnitTests {
         assertTrue(athleteHeartRate.isHeartRateInRange());
     }
 
+    @Test
+    public void resetHeartRates() throws Exception{
+        athleteHeartRate.setHeartRateRange(normalHeartRate, normalHeartRate);
+        athleteHeartRate.resetRangeToDefault();
+        assertTrue(athleteHeartRate.heartRateMin == minHeartRate && athleteHeartRate.heartRateMax == maxHeartRate);
+    }
+
 
 }

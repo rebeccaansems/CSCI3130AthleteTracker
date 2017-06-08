@@ -5,4 +5,5 @@ package com.csci3130.athletetracker;
  */
 
 public class RangeSettingScreenTest {
+
 }

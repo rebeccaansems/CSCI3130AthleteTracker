@@ -35,4 +35,9 @@ public class AthleteHeartRate {
         }
         return false;
     }
+
+    public void resetRangeToDefault(){
+        heartRateMin = 60;
+        heartRateMax = 120;
+    }
 }

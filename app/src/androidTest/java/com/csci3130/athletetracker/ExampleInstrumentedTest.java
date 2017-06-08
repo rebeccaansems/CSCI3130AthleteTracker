@@ -1,5 +1,6 @@
 package com.csci3130.athletetracker;
 
+import android.support.test.espresso.core.deps.guava.collect.Range;
 import android.support.test.filters.LargeTest;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
@@ -25,8 +26,8 @@ import static android.support.test.espresso.matcher.ViewMatchers.withText;
 @LargeTest
 public class ExampleInstrumentedTest {
     @Rule
-    public ActivityTestRule<RangeScreenUI> mActivityRule = new ActivityTestRule<>(
-            RangeScreenUI.class);
+    public ActivityTestRule<SetRange> mActivityRule = new ActivityTestRule<>(
+            SetRange.class);
 
     @Test
     public void resetToDefaultResetssText()
