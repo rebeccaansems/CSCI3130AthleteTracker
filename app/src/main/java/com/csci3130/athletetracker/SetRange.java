@@ -47,8 +47,8 @@ public class SetRange extends AppCompatActivity {
 
     private void resetRangeValuesDefault(){
         athleteHeartRate.resetRangeToDefault();
-        //((EditText)findViewById(R.id.et_heartRateMinimum)).setText(athleteHeartRate.heartRateMin);
-        //((EditText)findViewById(R.id.et_heartRateMaximum)).setText(athleteHeartRate.heartRateMin);
+        ((EditText)findViewById(R.id.et_heartRateMinimum)).setText(athleteHeartRate.heartRateMin+"", TextView.BufferType.EDITABLE);
+        ((EditText)findViewById(R.id.et_heartRateMaximum)).setText(athleteHeartRate.heartRateMax+"", TextView.BufferType.EDITABLE);
     }
 
 }
