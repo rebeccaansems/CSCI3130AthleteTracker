@@ -9,8 +9,8 @@ import android.support.v7.app.AppCompatActivity;
 public class AthleteHeartRate {
 
     private int currentHeartRate;
-    public int heartRateMin, heartRateMax;
-    public int defaultHeartRateMin = 60, defaultHeartRateMax = 120;
+    public static int heartRateMin, heartRateMax;
+    public static int defaultHeartRateMin = 60, defaultHeartRateMax = 120;
 
     //This allows for testing without Hexiwear data
     public void setCurrentHeartRate(int heartRate){
@@ -37,7 +37,7 @@ public class AthleteHeartRate {
         return false;
     }
 
-    public void resetRangeToDefault(){
+    public static void resetRangeToDefault(){
         heartRateMin = defaultHeartRateMin;
         heartRateMax = defaultHeartRateMax;
     }
