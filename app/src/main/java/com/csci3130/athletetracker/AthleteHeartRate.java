@@ -10,6 +10,7 @@ public class AthleteHeartRate {
 
     private int currentHeartRate;
     public int heartRateMin, heartRateMax;
+    public int defaultHeartRateMin = 60, defaultHeartRateMax = 120;
 
     //This allows for testing without Hexiwear data
     public void setCurrentHeartRate(int heartRate){
@@ -37,7 +38,7 @@ public class AthleteHeartRate {
     }
 
     public void resetRangeToDefault(){
-        heartRateMin = 60;
-        heartRateMax = 120;
+        heartRateMin = defaultHeartRateMin;
+        heartRateMax = defaultHeartRateMax;
     }
 }
