@@ -16,6 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".SetRange"
+            android:label="@string/title_activity_set_range"></activity>
     </application>
 
 </manifest>

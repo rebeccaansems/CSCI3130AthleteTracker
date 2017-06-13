@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.csci3130.athletetracker.SetRange">
+
+
+
+    <TextView
+        android:id="@+id/t_setRangeTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Set Range"
+        android:textAlignment="center"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/t_heartRateTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Heart Rate"
+        android:textAlignment="center"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/t_heartRateMin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Minimum" />
+
+    <EditText
+        android:id="@+id/et_heartRateMinimum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/t_heartRateMaximum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Maximum" />
+
+    <EditText
+        android:id="@+id/et_heartRateMaximum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/t_stepsTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Steps"
+        android:textAlignment="center"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/t_stepsMinimum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Minimum" />
+
+    <EditText
+        android:id="@+id/et_stepsMinimum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/t_stepsMaximum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Maximum" />
+
+    <EditText
+        android:id="@+id/et_stepsMaximum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/b_resetToDefaultRange"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Reset" />
+
+    <Button
+        android:id="@+id/b_rangeBackToMainScreen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Return to Main" />
+</LinearLayout>

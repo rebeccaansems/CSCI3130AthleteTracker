@@ -1,5 +1,7 @@
 package com.csci3130.athletetracker;
 
+import android.support.v7.app.AppCompatActivity;
+
 /**
  * Created by Rebecca Ansems on 2017-06-01.
  */
