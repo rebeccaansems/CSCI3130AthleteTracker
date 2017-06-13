@@ -22,10 +22,23 @@ public class MainActivity extends AppCompatActivity {
                 gotoRangeScreen();
             }
         });
+
+            // Historical Data Button
+        final Button gotoHistoricalDataScreenButton = (Button) findViewById(R.id.b_gotoHistoricalData);
+        gotoHistoricalDataScreenButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                gotoHistoricalDataScreen();
+            }
+        });
     }
 
     public void gotoRangeScreen(){
         Intent intent = new Intent(this, SetRange.class);
+        startActivity(intent);
+    }
+
+    public void gotoHistoricalDataScreen(){
+        Intent intent = new Intent(this, historicalData.class);
         startActivity(intent);
     }
 
