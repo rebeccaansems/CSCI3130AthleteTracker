@@ -18,7 +18,8 @@
         </activity>
         <activity
             android:name=".SetRange"
-            android:label="@string/title_activity_set_range"></activity>
+            android:label="@string/title_activity_set_range" />
+        <activity android:name=".HistoricalData"></activity>
     </application>
 
 </manifest>

@@ -19,6 +19,13 @@ public class MainActivity extends AppCompatActivity {
                 gotoRangeScreen();
             }
         });
+
+        Button goToHistoricalDataButton = (Button)findViewById(R.id.b_goToHistoricalDataScreen);
+        goToHistoricalDataButton.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                goToHistoricalDataScreen();
+            }
+        });
     }
 
     public void OpenedMainScreen(){
@@ -40,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void gotoRangeScreen(){
-        setContentView(R.layout.setting_range);
+        setContentView(R.layout.activity_historical_data);
         OpenedRangeScreen();
     }
 
@@ -49,5 +56,10 @@ public class MainActivity extends AppCompatActivity {
         OpenedMainScreen();
     }
 
-
+    public void goToHistoricalDataScreen(){
+        Intent i=new Intent(MainActivity.this, HistoricalData.class);
+        startActivity(i);
+        //setContentView(R.layout.activity_historical_data);
+        //OpenedRangeScreen();
+    }
 }
