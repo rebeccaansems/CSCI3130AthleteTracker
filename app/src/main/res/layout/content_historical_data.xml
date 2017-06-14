@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.csci3130.athletetracker.historicalData"
+    tools:context="com.csci3130.athletetracker.HistoricalData"
     tools:showIn="@layout/activity_historical_data">
 
     <TextView

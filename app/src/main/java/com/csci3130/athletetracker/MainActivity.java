@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void gotoHistoricalDataScreen(){
-        Intent intent = new Intent(this, historicalData.class);
+        Intent intent = new Intent(this, HistoricalData.class);
         startActivity(intent);
     }
 
