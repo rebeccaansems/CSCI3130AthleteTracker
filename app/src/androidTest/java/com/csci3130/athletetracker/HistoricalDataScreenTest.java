@@ -52,6 +52,12 @@ public class HistoricalDataScreenTest {
                 allOf(withId(R.id.spinner), isDisplayed()));
         appCompatSpinner.perform(click());
 
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         ViewInteraction appCompatTextView = onView(
                 allOf(withId(android.R.id.text1), withText("June"), isDisplayed()));
         appCompatTextView.perform(click());
