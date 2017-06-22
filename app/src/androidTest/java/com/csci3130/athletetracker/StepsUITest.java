@@ -35,7 +35,7 @@ public class StepsUITest {
         max = "20000";
     }
 
-    @Test
+    @Test//not completed
     public void findTest(){
         //onView(withId(R.id.hello)).check(matches(withText("Hello World!")));
 
