@@ -157,7 +157,7 @@ public class RangeSettingScreenTest {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        
+
         onView(withId(R.id.et_heartRateMaximum))
                 .check(matches(withText(Integer.toString(athleteHeartRate.defaultHeartRateMax))));
     }
