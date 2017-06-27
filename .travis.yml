@@ -39,3 +39,7 @@ os:
 branches:
   only:
   - master
+
+before_script:
+  - ${ANDROID_HOME}tools/bin/sdkmanager --channel=3 "tools" "platform-tools" "build-tools;25.0.3" "platforms;android-25" "extras;google;m2repository"
+script: ./build.sh
