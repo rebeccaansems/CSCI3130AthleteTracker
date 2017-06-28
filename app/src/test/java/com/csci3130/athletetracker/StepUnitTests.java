@@ -58,13 +58,5 @@ public class StepUnitTests {
         AthleteSteps.setCurrentSteps(normalStep);
         assertTrue(AthleteSteps.isStepInRange());
     }
-
-    /*
-    @Test
-    public void resetSteps() throws Exception{
-        AthleteSteps.setStepsRange(normalStep, normalStep);
-        AthleteSteps.resetRangeToDefault();
-        assertTrue(AthleteSteps.StepsMin == minStep && AthleteSteps.StepsMax == maxStep);
-    }
-    */
+    
 }
