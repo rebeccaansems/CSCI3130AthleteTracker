@@ -22,30 +22,32 @@ import static android.support.test.espresso.matcher.ViewMatchers.withText;
 @RunWith(AndroidJUnit4.class)
 @LargeTest
 public class StepsUITest {
-    private String min;
-    private String max;
+    private int min;
+    private int max;
 
     @Rule
     public ActivityTestRule<MainActivity> mActivityRule = new ActivityTestRule<>(
             MainActivity.class);
 
     @Before
-    public void initString(){
-        min = "1000";
-        max = "20000";
+    public void initInt(){
+         min = 1000;
+         max = 20000;
     }
 
     @Test//not completed
     public void findTest(){
-        //onView(withId(R.id.hello)).check(matches(withText("Hello World!")));
-
         onView(withId(R.id.b_gotoSetRangeScreen)).perform(click());// click SET RANGE button
 
-        onView(withId(R.id.et_stepsMinimum)).perform(typeText(min));
-        onView(withId(R.id.et_stepsMaximum)).perform(typeText(max));//input
+      //  onView(withId(R.id.pagename)).check(matches(withId()));//check if the page jumped
+
+       // onView(withId(R.id.et_stepsMinimum)).perform(typeText(min));
+        //onView(withId(R.id.et_stepsMaximum)).perform(typeText(max));//input the min and max values
+
+       // onView(withId(R.id.et_stepsMinimum)).check(matches(withText("1000")));
+        //onView(withId(R.id.et_stepsMaximum)).check(matches(withText("20000")));
 
         onView(withId(R.id.b_rangeBackToMainScreen)).perform(click());// click RETURN TO MAIN button
-
 
 
 
