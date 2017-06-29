@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.csci3130.athletetracker.HistoricalData">
 
     <include layout="@layout/content_historical_data"
@@ -13,23 +15,23 @@
         tools:layout_editor_absoluteX="0dp" />
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/s_dateSpinner"
         android:layout_width="209dp"
         android:layout_height="24dp"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toRightOf="@+id/textView"
+        app:layout_constraintLeft_toRightOf="@+id/t_viewData"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="16dp" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/t_viewData"
         android:layout_width="124dp"
         android:layout_height="30dp"
         android:layout_marginTop="16dp"
         android:text="View data from:"
         android:textSize="16sp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/spinner"
+        app:layout_constraintRight_toLeftOf="@+id/s_dateSpinner"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -60,4 +62,4 @@
         app:layout_constraintVertical_bias="1.0"
         tools:visibility="invisible" />
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>
