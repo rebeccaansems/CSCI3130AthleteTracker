@@ -53,27 +53,8 @@ public class RangeSettingScreenTest {
         onView(withId(R.id.et_heartRateMinimum))
                 .perform(clearText(),typeText(Integer.toString(athleteHeartRate.defaultHeartRateMin)), closeSoftKeyboard());
 
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
         onView(withId(R.id.b_rangeBackToMainScreen)).perform(click());
-
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
         onView(withId(R.id.b_gotoSetRangeScreen)).perform(click());
-
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
 
         onView(withId(R.id.et_heartRateMinimum))
                 .check(matches(withText(Integer.toString(athleteHeartRate.heartRateMin))));
@@ -85,27 +66,8 @@ public class RangeSettingScreenTest {
         onView(withId(R.id.et_heartRateMaximum))
                 .perform(clearText(), typeText(Integer.toString(athleteHeartRate.defaultHeartRateMax)), closeSoftKeyboard());
 
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
         onView(withId(R.id.b_rangeBackToMainScreen)).perform(click());
-
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
         onView(withId(R.id.b_gotoSetRangeScreen)).perform(click());
-
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
 
         onView(withId(R.id.et_heartRateMaximum))
                 .check(matches(withText(Integer.toString(athleteHeartRate.heartRateMax))));
@@ -119,44 +81,12 @@ public class RangeSettingScreenTest {
         onView(withId(R.id.et_heartRateMaximum))
                 .perform(clearText(),typeText(Integer.toString(athleteHeartRate.defaultHeartRateMax+10)), closeSoftKeyboard());
 
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
         onView(withId(R.id.b_resetToDefaultRange)).perform(click());
-
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
         onView(withId(R.id.b_rangeBackToMainScreen)).perform(click());
-
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
         onView(withId(R.id.b_gotoSetRangeScreen)).perform(click());
-
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
 
         onView(withId(R.id.et_heartRateMinimum))
                 .check(matches(withText(Integer.toString(athleteHeartRate.defaultHeartRateMin))));
-
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
 
         onView(withId(R.id.et_heartRateMaximum))
                 .check(matches(withText(Integer.toString(athleteHeartRate.defaultHeartRateMax))));
