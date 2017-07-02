@@ -34,9 +34,9 @@
             android:text="View Historical Data" />
 
         <Button
-            android:id="@+id/button5"
+            android:id="@+id/b_notifyButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:text="Notification Button" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

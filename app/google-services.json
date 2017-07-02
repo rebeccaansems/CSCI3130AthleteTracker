@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "478486174072-q48mu1d8b2hhk6lj6c6blkjvncni3v1a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.csci3130.athletetracker",
+            "certificate_hash": "2f36ad554ae326c2ab153f1fa853effe5572135e"
+          }
+        },
+        {
           "client_id": "478486174072-q6u2naqg8udmbvthqh6kc77ts2bqchp9.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
