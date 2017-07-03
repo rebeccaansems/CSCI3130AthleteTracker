@@ -1,5 +1,11 @@
 package com.csci3130.athletetracker;
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 
 /**
@@ -8,7 +14,7 @@ import android.support.v7.app.AppCompatActivity;
 
 public class AthleteHeartRate {
 
-    private int currentHeartRate;
+    private int currentHeartRate = 80;
     public static int heartRateMin, heartRateMax;
     public static int defaultHeartRateMin = 60, defaultHeartRateMax = 120;
 

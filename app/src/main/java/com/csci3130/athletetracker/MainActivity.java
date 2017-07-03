@@ -35,13 +35,6 @@ public class MainActivity extends AppCompatActivity {
                 gotoHistoricalDataScreen();
             }
         });
-
-        final Button notifyScreenButton = (Button) findViewById(R.id.b_notifyButton);
-        notifyScreenButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                notifyUser();
-            }
-        });
     }
 
     public void gotoRangeScreen(){
@@ -52,29 +45,5 @@ public class MainActivity extends AppCompatActivity {
     public void gotoHistoricalDataScreen(){
         Intent intent = new Intent(this, HistoricalData.class);
         startActivity(intent);
-    }
-
-
-    //send the heart rate notification to user
-    public void notifyUser(){
-        Intent intent = new Intent(MainActivity.this, AthleteHeartRate.class);
-        PendingIntent contentIntent = PendingIntent.getActivity(MainActivity.this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
-
-        NotificationCompat.Builder b = new NotificationCompat.Builder(MainActivity.this);
-
-        b.setAutoCancel(true)
-                .setDefaults(Notification.DEFAULT_ALL)
-                .setWhen(System.currentTimeMillis())
-                .setSmallIcon(R.mipmap.ic_launcher)
-                .setTicker("Hearty365")
-                .setContentTitle("Heart Rate Notification")
-                .setContentText("Heyyyy your heart rate out of range! Are you okay?")
-                .setDefaults(Notification.DEFAULT_LIGHTS| Notification.DEFAULT_SOUND)
-                .setContentIntent(contentIntent)
-                .setContentInfo("Info");
-
-
-        NotificationManager notificationManager = (NotificationManager) MainActivity.this.getSystemService(Context.NOTIFICATION_SERVICE);
-        notificationManager.notify(1, b.build());
     }
 }

@@ -87,6 +87,12 @@
         android:inputType="number" />
 
     <Button
+        android:id="@+id/b_TestRanges"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Test Range" />
+
+    <Button
         android:id="@+id/b_resetToDefaultRange"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
