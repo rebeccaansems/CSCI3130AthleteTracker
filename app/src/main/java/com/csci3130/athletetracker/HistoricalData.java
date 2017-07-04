@@ -10,6 +10,9 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/**
+ * Displays and uses the data from hexiwear
+ */
 public class HistoricalData extends AppCompatActivity {
 
     Spinner spinner;
@@ -30,12 +33,16 @@ public class HistoricalData extends AppCompatActivity {
             "December"
     };
 
+    /** Upon creation set the data for the spinner and
+     * the data for the rest of the page
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_historical_data2);
 
-        spinner = (Spinner)findViewById(R.id.s_dateSpinner);
+        spinner = (Spinner) findViewById(R.id.s_dateSpinner);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(
                 this, android.R.layout.simple_spinner_item, months);
 
@@ -50,10 +57,9 @@ public class HistoricalData extends AppCompatActivity {
                         int position = spinner.getSelectedItemPosition();
                         final TextView juneData = (TextView) findViewById(R.id.showData2);
 
-                        if (position == 6){
+                        if (position == 6) {
                             juneData.setVisibility(View.VISIBLE);
-                        }
-                        else
+                        } else
                             juneData.setVisibility(View.INVISIBLE);
                     }
 
