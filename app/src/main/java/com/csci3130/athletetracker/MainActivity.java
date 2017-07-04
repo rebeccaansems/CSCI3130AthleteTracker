@@ -11,6 +11,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+/**
+ * Main activity class that can go the all the other class
+ */
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -37,11 +40,17 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * gotoRangeScreen method that will go to the set range screen
+     */
     public void gotoRangeScreen(){
         Intent intent = new Intent(this, SetRange.class);
         startActivity(intent);
     }
 
+    /**
+     * gotoHistoricalDataScreen method that will go to the historical data screen
+     */
     public void gotoHistoricalDataScreen(){
         Intent intent = new Intent(this, HistoricalData.class);
         startActivity(intent);
