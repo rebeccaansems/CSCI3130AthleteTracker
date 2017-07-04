@@ -9,7 +9,7 @@ import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 
 /**
- * Created by Rebecca Ansems on 2017-06-01.
+ * Contains methods associated with heart rate tracking and ranges
  */
 
 public class AthleteHeartRate {
@@ -18,24 +18,45 @@ public class AthleteHeartRate {
     public static int heartRateMin, heartRateMax;
     public static int defaultHeartRateMin = 60, defaultHeartRateMax = 120;
 
-    //This allows for testing without Hexiwear data
+    /** Allows testing of methods without hexiwear data
+     *
+     * @param heartRate the current heart rate
+     */
     public void setCurrentHeartRate(int heartRate){
         currentHeartRate = heartRate;
     }
 
+    /** Gets the current/most recent heart rate
+     *
+     * @return current/most recent heart rate
+     */
     public int getHeartRate(){
         return currentHeartRate;
     }
 
+    /** Sets the range where heart rate is good
+     *
+     * @param min the lowest heart rate that is acceptable
+     * @param max the highest heart rate that is acceptable
+     */
     public void setHeartRateRange(int min, int max){
         heartRateMin = min;
         heartRateMax = max;
     }
 
+    /** Checks if current heart rate is within the set range
+     *
+     * @return boolean that says if heart rate is in range
+     */
     public boolean isHeartRateInRange(){
         return isHeartRateInRange(currentHeartRate);
     }
 
+    /** Checks if given heart rate is within the set range
+     *
+     * @param heartRate heart rate to test
+     * @return boolean that says if heart rate is in range
+     */
     public boolean isHeartRateInRange(int heartRate){
         if(heartRate > heartRateMin && heartRate < heartRateMax){
             return true;
@@ -43,6 +64,9 @@ public class AthleteHeartRate {
         return false;
     }
 
+    /** Sets heart beat range, min and max, to their defaults
+     * min default is 60, max default is 120
+     */
     public static void resetRangeToDefault(){
         heartRateMin = defaultHeartRateMin;
         heartRateMax = defaultHeartRateMax;
