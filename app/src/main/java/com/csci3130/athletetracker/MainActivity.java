@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-            // Historical Data Button
+        // Historical Data Button
         final Button gotoHistoricalDataScreenButton = (Button) findViewById(R.id.b_gotoHistoricalData);
         gotoHistoricalDataScreenButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
