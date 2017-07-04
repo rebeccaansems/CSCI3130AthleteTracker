@@ -21,8 +21,8 @@ import static org.hamcrest.Matchers.containsString;
 
 import com.csci3130.athletetracker.AthleteHeartRate;
 
-/** Espresso tests for the historical data screen
- *
+/**
+ * Espresso tests for the historical data screen
  */
 @RunWith(AndroidJUnit4.class)
 @LargeTest
@@ -56,7 +56,8 @@ public class HistoricalDataScreenTest {
             "December"
     };
 
-    /** Tests that determine if the spinner has the correct information in it
+    /**
+     * Tests that determine if the spinner has the correct information in it
      *
      * @throws InterruptedException to ignore Thread.Sleep
      */
