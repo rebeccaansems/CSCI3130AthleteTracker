@@ -19,9 +19,9 @@ android {
         }
     }
 
-        lintOptions {
-            abortOnError false
-        }
+    lintOptions {
+        abortOnError false
+    }
 }
 
 dependencies {
@@ -30,17 +30,23 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     //compile 'com.google.gms:google-services:3.1.0'
+    
+
+    //add the core and message
+    
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support:design:25.3.1'
     compile 'com.android.support:support-vector-drawable:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.google.firebase:firebase-database:10.2.6'
 
-    //add the core and message
-    compile 'com.google.firebase:firebase-core: 10.2.6'
+    //needed to draw graph for data
+    compile 'com.github.PhilJay:MPAndroidChart:v3.0.2'
 
+    compile 'com.google.firebase:firebase-core: 10.2.6'
     testCompile 'junit:junit:4.12'
 }
+
 
 
 apply plugin: 'com.google.gms.google-services'

@@ -1,5 +1,8 @@
 package com.csci3130.athletetracker;
 
+import android.content.Intent;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -16,6 +19,8 @@ import android.widget.Toast;
 public class HistoricalData extends AppCompatActivity {
 
     Spinner spinner;
+
+    DrawGraph graph;
 
     String[] months = {
             "Select...",
@@ -47,20 +52,23 @@ public class HistoricalData extends AppCompatActivity {
                 this, android.R.layout.simple_spinner_item, months);
 
         spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(
-                new AdapterView.OnItemSelectedListener() {
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
                     @Override
                     public void onItemSelected(AdapterView<?> arg0, View arg1,
                                                int arg2, long arg3) {
 
                         int position = spinner.getSelectedItemPosition();
-                        final TextView juneData = (TextView) findViewById(R.id.showData2);
+                        //final Fragment juneGraph = (Fragment) findViewById(graphFragment);
 
-                        if (position == 6) {
-                            juneData.setVisibility(View.VISIBLE);
-                        } else
-                            juneData.setVisibility(View.INVISIBLE);
+
+                        if (position == 6){
+                            gotoDrawGraphScreen();
+                            //juneGraph.setVisibility(View.VISIBLE);
+                        }
+                        else {
+                            //juneData.setVisibility(View.INVISIBLE);
+                        }
                     }
 
                     @Override
@@ -71,6 +79,13 @@ public class HistoricalData extends AppCompatActivity {
 
                 }
         );
+
+
+    }
+
+    public void gotoDrawGraphScreen(){
+        Intent intent = new Intent(this, DrawGraph.class);
+        startActivity(intent);
     }
 
 
