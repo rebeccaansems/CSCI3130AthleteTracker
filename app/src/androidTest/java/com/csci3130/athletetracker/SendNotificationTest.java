@@ -24,6 +24,10 @@ import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static org.hamcrest.Matchers.allOf;
 
+/**
+ * Check the notification button does exist and sent notifications to the user
+ */
+
 @LargeTest
 @RunWith(AndroidJUnit4.class)
 public class SendNotificationTest {
@@ -31,16 +35,12 @@ public class SendNotificationTest {
     @Rule
     public ActivityTestRule<MainActivity> mActivityTestRule = new ActivityTestRule<>(MainActivity.class);
 
+    /**
+     * Check the notification button does exist
+     */
     @Test
-    public void sendNotificationTest() {
-        // Added a sleep statement to match the app's execution delay.
-        // The recommended way to handle such scenarios is to use Espresso idling resources:
-        // https://google.github.io/android-testing-support-library/docs/espresso/idling-resource/index.html
-        try {
-            Thread.sleep(60000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+    public void sendNotificationTest() throws InterruptedException {
+        Thread.sleep(60000);
 
         ViewInteraction button = onView(
                 allOf(withId(R.id.b_notifyButton),
@@ -64,6 +64,12 @@ public class SendNotificationTest {
 
     }
 
+    /** check the button already bundle with the notification or not
+     *
+     * @param parentMatcher
+     * @param position
+     * @return
+     */
     private static Matcher<View> childAtPosition(
             final Matcher<View> parentMatcher, final int position) {
 

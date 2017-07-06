@@ -18,12 +18,18 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+/**the class setting the range of the heart rate and steps
+ *
+ */
 public class SetRange extends AppCompatActivity {
 
     AthleteHeartRate athleteHeartRate;
 
     EditText setMinimumHeartRate, setMaximumHeartRate, setMinimumSteps, setMaximumSteps;
 
+    /**onCreate method create the variable for edit text fields
+     *
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +49,9 @@ public class SetRange extends AppCompatActivity {
         setupButtons();
     }
 
+    /**setupButtons methods create two buttons that reset the range and go back to main screen
+     *
+     */
     private void setupButtons(){
         final Button resetRangeValues = (Button) findViewById(R.id.b_resetToDefaultRange);
         resetRangeValues.setOnClickListener(new View.OnClickListener() {
@@ -61,6 +70,9 @@ public class SetRange extends AppCompatActivity {
         });
     }
 
+    /**go to main screen method will bring back to the main screen
+     *
+     */
     private void goToMainScreen() {
 
         saveMinMaxValues();
@@ -69,6 +81,9 @@ public class SetRange extends AppCompatActivity {
         startActivity(intent);
     }
 
+    /**save min max values method will save the values for max and min
+     *
+     */
     private void saveMinMaxValues(){
         AthleteHeartRate.heartRateMin = Integer.parseInt(setMinimumHeartRate.getText().toString());
         AthleteHeartRate.heartRateMax = Integer.parseInt(setMaximumHeartRate.getText().toString());
@@ -76,6 +91,10 @@ public class SetRange extends AppCompatActivity {
         NotifyUserHeartRateRange();
     }
 
+    /** reset range method will reset the heart rate range to default
+     * and will call the NotifyUserHeartRateRange if they set it out of range
+      *
+     */
     private void resetRangeValuesDefault(){
         athleteHeartRate.resetRangeToDefault();
         ((EditText)findViewById(R.id.et_heartRateMinimum)).setText(Integer.toString(AthleteHeartRate.defaultHeartRateMin), TextView.BufferType.EDITABLE);
@@ -84,7 +103,10 @@ public class SetRange extends AppCompatActivity {
         NotifyUserHeartRateRange();
     }
 
-    //send the heart rate notification to user
+    /**NotifyUserHeartRateRange method will send the heart rate notification to user
+     * when the user set the heart rate out of range
+     *
+     */
     public void NotifyUserHeartRateRange(){
         if(!athleteHeartRate.isHeartRateInRange()){
             Intent intent = new Intent(SetRange.this, AthleteHeartRate.class);

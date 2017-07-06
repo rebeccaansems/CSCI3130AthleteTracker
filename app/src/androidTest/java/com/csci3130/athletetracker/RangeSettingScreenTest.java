@@ -1,7 +1,7 @@
 package com.csci3130.athletetracker;
 
 /**
- * Created by Rebecca Ansems on 2017-06-08.
+ * Espresso tests for heart rate + steps range setting screen
  */
 
 import org.junit.Assert;
@@ -47,6 +47,9 @@ public class RangeSettingScreenTest {
         athleteHeartRate = new AthleteHeartRate();
     }
 
+    /** Tests that entering in a number in the min heart rate text field
+     * results in the min test rate being set to that value
+     */
     @Test
     public void minRangeHeartRateSet()
     {
@@ -60,6 +63,9 @@ public class RangeSettingScreenTest {
                 .check(matches(withText(Integer.toString(athleteHeartRate.heartRateMin))));
     }
 
+    /** Tests that entering in a number in the max heart rate text field
+     * results in the max test rate being set to that value
+     */
     @Test
     public void maxRangeHeartRateSet()
     {
@@ -73,6 +79,10 @@ public class RangeSettingScreenTest {
                 .check(matches(withText(Integer.toString(athleteHeartRate.heartRateMax))));
     }
 
+    /** Tests that clicking the default heart rate button
+     * results in the min/max heart rate range being reset back
+     * to their default values
+     */
     @Test
     public void defaultHeartRateSet()
     {
