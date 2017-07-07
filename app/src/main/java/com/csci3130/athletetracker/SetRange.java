@@ -6,21 +6,17 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 public class SetRange extends AppCompatActivity {
 
     AthleteHeartRate athleteHeartRate;
+    AthleteSteps athleteCurrentSteps;
 
     EditText setMinimumHeartRate, setMaximumHeartRate, setMinimumSteps, setMaximumSteps;
 
@@ -37,10 +33,19 @@ public class SetRange extends AppCompatActivity {
         setMaximumHeartRate = (EditText) findViewById(R.id.et_heartRateMaximum);
         setMaximumHeartRate.setText(Integer.toString(AthleteHeartRate.heartRateMax));
 
-        setMinimumSteps = (EditText) findViewById(R.id.et_stepsMinimum);
-        setMaximumSteps = (EditText) findViewById(R.id.et_stepsMaximum);
+
 
         setupButtons();
+
+        athleteCurrentSteps = new AthleteSteps();
+
+        setMinimumSteps = (EditText) findViewById(R.id.et_stepsMinimum);
+        //String temp1; temp1 = setMinimumSteps.getText();
+        setMinimumSteps.setText(Integer.toString(AthleteSteps.StepsMin));
+
+        setMaximumSteps = (EditText) findViewById(R.id.et_stepsMaximum);
+        setMaximumSteps.setText(Integer.toString(AthleteSteps.StepsMax));
+
     }
 
     private void setupButtons(){
@@ -72,8 +77,11 @@ public class SetRange extends AppCompatActivity {
     private void saveMinMaxValues(){
         AthleteHeartRate.heartRateMin = Integer.parseInt(setMinimumHeartRate.getText().toString());
         AthleteHeartRate.heartRateMax = Integer.parseInt(setMaximumHeartRate.getText().toString());
+        AthleteSteps.StepsMin = Integer.parseInt(setMinimumSteps.getText().toString());
+        AthleteSteps.StepsMax = Integer.parseInt(setMaximumSteps.getText().toString());
 
         NotifyUserHeartRateRange();
+        NotifyUserStepsRange();
     }
 
     private void resetRangeValuesDefault(){
@@ -108,5 +116,30 @@ public class SetRange extends AppCompatActivity {
             notificationManager.notify(1, b.build());
        }
     }
+
+    public void NotifyUserStepsRange(){
+        if(!athleteCurrentSteps.isStepInRange()){
+            Intent intent = new Intent(SetRange.this, AthleteSteps.class);
+            PendingIntent contentIntent = PendingIntent.getActivity(SetRange.this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+            NotificationCompat.Builder b = new NotificationCompat.Builder(SetRange.this);
+
+            b.setAutoCancel(true)
+                    .setDefaults(Notification.DEFAULT_ALL)
+                    .setWhen(System.currentTimeMillis())
+                    .setSmallIcon(R.mipmap.ic_launcher)
+                    .setTicker("Steps365")
+                    .setContentTitle("Steps Notification")
+                    .setContentText("Hey your steps of "+athleteCurrentSteps.getSteps()+" is exceeded.\n")
+                    .setDefaults(Notification.DEFAULT_LIGHTS| Notification.DEFAULT_SOUND)
+                    .setContentIntent(contentIntent)
+                    .setContentInfo("Info");
+
+
+            NotificationManager notificationManager = (NotificationManager) SetRange.this.getSystemService(Context.NOTIFICATION_SERVICE);
+            notificationManager.notify(1, b.build());
+        }
+    }
+
 
 }

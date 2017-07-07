@@ -11,8 +11,8 @@ import static org.junit.Assert.*;
 public class StepUnitTests {
     public AthleteSteps AthleteSteps;
 
-    private int highStep = 15000, lowStep = 5000, normalStep = 8000;
-    private int minStep = 6000, maxStep = 12000;
+    private int highStep = 30000, lowStep = 5, normalStep = 8000;
+    private int minStep = 2000, maxStep = 17000;
 
     @Before
     public void Start(){
@@ -28,35 +28,35 @@ public class StepUnitTests {
     @Test
     public void StepMinRangeIsSetProperly() throws Exception{
         AthleteSteps.setStepsRange(minStep, maxStep);
-        assertEquals(AthleteSteps.StepsMin, minStep);
+        assertEquals(AthleteSteps.StepsMin, minStep);//min
     }
 
     @Test
     public void StepMaxRangeIsSetProperly() throws Exception{
         AthleteSteps.setStepsRange(minStep, maxStep);
-        assertEquals(AthleteSteps.StepsMax, maxStep);
+        assertEquals(AthleteSteps.StepsMax, maxStep);//max
     }
 
 
     @Test
     public void lowStepIsOutOfRange() throws Exception{
         AthleteSteps.setStepsRange(minStep, maxStep);
-        AthleteSteps.setCurrentSteps(lowStep);
+        AthleteSteps.setCurrentSteps(lowStep);//low
         assertFalse(AthleteSteps.isStepInRange());
     }
 
     @Test
     public void highStepIsOutOfRange() throws Exception{
         AthleteSteps.setStepsRange(minStep, maxStep);
-        AthleteSteps.setCurrentSteps(highStep);
+        AthleteSteps.setCurrentSteps(highStep);//high
         assertFalse(AthleteSteps.isStepInRange());
     }
 
     @Test
     public void normalStepIsInRange() throws Exception{
         AthleteSteps.setStepsRange(minStep, maxStep);
-        AthleteSteps.setCurrentSteps(normalStep);
+        AthleteSteps.setCurrentSteps(normalStep);//normal
         assertTrue(AthleteSteps.isStepInRange());
     }
-    
+
 }
