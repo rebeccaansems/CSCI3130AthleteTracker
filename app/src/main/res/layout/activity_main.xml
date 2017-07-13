@@ -28,6 +28,12 @@
             android:text="Set Ranges" />
 
         <Button
+            android:id="@+id/b_gotoSendMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Send Athlete Message" />
+
+        <Button
             android:id="@+id/b_gotoHistoricalData"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
