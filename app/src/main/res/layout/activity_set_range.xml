@@ -8,8 +8,6 @@
     android:orientation="vertical"
     tools:context="com.csci3130.athletetracker.SetRange">
 
-
-
     <TextView
         android:id="@+id/t_setRangeTitle"
         android:layout_width="match_parent"

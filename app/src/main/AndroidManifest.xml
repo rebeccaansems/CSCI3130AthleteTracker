@@ -20,10 +20,11 @@
             android:name=".SetRange"
             android:label="@string/title_activity_set_range" />
         <activity
-            android:name=".historicalData"
+            android:name=".SendUserMessage"
+        <activity
+            android:name=".HistoricalData"
             android:label="@string/title_activity_historical_data"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".HistoricalData" />
         <activity android:name=".DrawGraph"></activity>
     </application>
 

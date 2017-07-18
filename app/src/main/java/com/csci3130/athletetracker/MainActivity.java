@@ -24,8 +24,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void OpenedMainScreen() {
-        final Button goToRangeScreenButton = (Button) findViewById(R.id.b_gotoSetRangeScreen);
-        goToRangeScreenButton.setOnClickListener(new View.OnClickListener() {
+        // Set Range Button
+        final Button gotoRangeScreenButton = (Button) findViewById(R.id.b_gotoSetRangeScreen);
+        gotoRangeScreenButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 gotoRangeScreen();
             }
@@ -36,6 +37,14 @@ public class MainActivity extends AppCompatActivity {
         gotoHistoricalDataScreenButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 gotoHistoricalDataScreen();
+            }
+        });
+
+        // Send User Message Button
+        final Button gotoSendUserMessageButton = (Button) findViewById(R.id.b_gotoSendMessage);
+        gotoSendUserMessageButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                gotoSendUserMessageScreen();
             }
         });
     }
@@ -53,6 +62,14 @@ public class MainActivity extends AppCompatActivity {
      */
     public void gotoHistoricalDataScreen(){
         Intent intent = new Intent(this, HistoricalData.class);
+        startActivity(intent);
+    }
+
+    /**
+     * gotoSendUserMessage method that will go to the send user message screen
+     */
+    public void gotoSendUserMessageScreen(){
+        Intent intent = new Intent(this, SendUserMessage.class);
         startActivity(intent);
     }
 }
