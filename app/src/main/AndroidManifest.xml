@@ -21,6 +21,7 @@
             android:label="@string/title_activity_set_range" />
         <activity
             android:name=".SendUserMessage"
+            android:label="Send Athlete Message" />
         <activity
             android:name=".HistoricalData"
             android:label="@string/title_activity_historical_data"
