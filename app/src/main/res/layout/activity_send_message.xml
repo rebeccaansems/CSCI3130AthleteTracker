@@ -16,23 +16,23 @@
         android:id="@+id/b_sendMessage1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:text="Heyy! Your heart beats so fast" />
 
     <Button
         android:id="@+id/b_sendMessage2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:text="Yo! you are not walking enough!" />
 
     <Button
         android:id="@+id/b_sendMessage3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:text="Hello! why are your heart beats so low" />
 
     <Button
         android:id="@+id/b_sendMessage4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:text="Cool.Good luck!" />
 </LinearLayout>
