@@ -12,6 +12,19 @@
         android:textColor="@android:color/black"
         android:textSize="36dp" />
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Athlete Phone Number" />
+
+    <EditText
+        android:id="@+id/et_athletePhoneNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="phone" />
+
     <Button
         android:id="@+id/b_sendMessage1"
         android:layout_width="match_parent"
