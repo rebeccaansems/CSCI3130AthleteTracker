@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/t_titleSendMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Send Message"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="36dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Athlete Phone Number" />
+
+    <EditText
+        android:id="@+id/et_athletePhoneNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="phone" />
+
+    <Button
+        android:id="@+id/b_sendMessage1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Heyy! Your heart beats so fast" />
+
+    <Button
+        android:id="@+id/b_sendMessage2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Yo! you are not walking enough!" />
+
+    <Button
+        android:id="@+id/b_sendMessage3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hello! why are your heart beats so low" />
+
+    <Button
+        android:id="@+id/b_sendMessage4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cool.Good luck!" />
+</LinearLayout>

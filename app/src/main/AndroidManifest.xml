@@ -20,11 +20,15 @@
             android:name=".SetRange"
             android:label="@string/title_activity_set_range" />
         <activity
-            android:name=".historicalData"
+            android:name=".SendUserMessage"
+            android:label="Send Athlete Message" />
+        <activity
+            android:name=".HistoricalData"
             android:label="@string/title_activity_historical_data"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".HistoricalData" />
         <activity android:name=".DrawGraph"></activity>
     </application>
+
+    <uses-permission android:name="android.permission.SEND_SMS" />
 
 </manifest>
