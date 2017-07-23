@@ -1,5 +1,6 @@
 package com.csci3130.athletetracker;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -157,8 +158,14 @@ public class HistoricalData extends AppCompatActivity {
              * 3 buttons to show and hide TextView, HeartRate graph and Steps graph
              */
         final Button buttonMonthData = (Button) findViewById(R.id.buttonMonthData);
-        final Button buttonHR = (Button) findViewById(R.id.buttonHR);
-        final Button buttonSteps = (Button) findViewById(R.id.buttonSteps);
+
+        final Button buttonGraph = (Button) findViewById(R.id.buttonGraph);
+        buttonGraph.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                gotoGraphScreen();
+            }
+        });
+
             /*
              * TextView and 3 buttons to filter data.
              */
@@ -229,9 +236,14 @@ public class HistoricalData extends AppCompatActivity {
                                 monthData.setVisibility(View.VISIBLE);
 
                                 buttonMonthData.setVisibility(View.VISIBLE);
-                                buttonHR.setVisibility(View.VISIBLE);
-                                buttonSteps.setVisibility(View.VISIBLE);
+                                buttonGraph.setVisibility(View.VISIBLE);
 
+                                final Button gotoGraphScreenButton = (Button) findViewById(R.id.buttonGraph);
+                                gotoGraphScreenButton.setOnClickListener(new View.OnClickListener() {
+                                    public void onClick(View v) {
+                                        gotoGraphScreen();
+                                    }
+                                });
                             }
                         });
 
@@ -261,8 +273,16 @@ public class HistoricalData extends AppCompatActivity {
                                 }
                                 monthData.setVisibility(View.VISIBLE);
                                 buttonMonthData.setVisibility(View.VISIBLE);
-                                buttonHR.setVisibility(View.VISIBLE);
-                                buttonSteps.setVisibility(View.VISIBLE);
+                                buttonGraph.setVisibility(View.VISIBLE);
+
+                                /*
+                                final Button gotoGraphScreenButton = (Button) findViewById(R.id.buttonGraph);
+                                gotoGraphScreenButton.setOnClickListener(new View.OnClickListener() {
+                                    public void onClick(View v) {
+                                        gotoGraphScreen();
+                                    }
+                                });
+                                */
                             }
                         });
 
@@ -284,6 +304,7 @@ public class HistoricalData extends AppCompatActivity {
                                             // only call getSteps() to get Steps
                                             String info = "Steps: " + history.getSteps() + "\n";
                                             monthData.setText(monthData.getText().toString()+ info);
+
                                         }
                                         @Override
                                         public void onCancelled(DatabaseError databaseError) {
@@ -292,13 +313,14 @@ public class HistoricalData extends AppCompatActivity {
                                 }
                                 monthData.setVisibility(View.VISIBLE);
                                 buttonMonthData.setVisibility(View.VISIBLE);
-                                buttonHR.setVisibility(View.VISIBLE);
-                                buttonSteps.setVisibility(View.VISIBLE);
+                                buttonGraph.setVisibility(View.VISIBLE);
+
+
                             }
                         });
 
                         if (position > 0) {
-                            // when the user select anything other than "select" from the spinner sit eveything to visible
+                            // when the user select anything other than "select" from the spinner set everything to visible
                             filterBy.setVisibility(View.VISIBLE);
 
                             filterBoth.setVisibility(View.VISIBLE);
@@ -309,8 +331,8 @@ public class HistoricalData extends AppCompatActivity {
                             monthData.setVisibility(View.GONE);
 
                             buttonMonthData.setVisibility(View.GONE);
-                            buttonHR.setVisibility(View.GONE);
-                            buttonSteps.setVisibility(View.GONE);
+                            buttonGraph.setVisibility(View.GONE);
+
 
                             filterBy.setVisibility(View.GONE);
 
@@ -328,7 +350,22 @@ public class HistoricalData extends AppCompatActivity {
 
                 }
         );
+
+
+        final Button gotoGraphScreenButton = (Button) findViewById(R.id.buttonGraph);
+        gotoGraphScreenButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                gotoGraphScreen();
+            }
+        });
+
     }
+
+    public void gotoGraphScreen(){
+        Intent intent = new Intent(this, DrawGraph.class);
+        startActivity(intent);
+    }
+
     public void buttonMonthData(View view) {
         TextView monthData = (TextView) findViewById(R.id.showData2);
 
@@ -351,7 +388,7 @@ public class HistoricalData extends AppCompatActivity {
         //hrGraph.setVisibility(View.GONE);
         //stepsGraph.setVisibility(View.GONE);
     }
-    public void buttonHR(View view) {
+    public void buttonGraph(View view) {
         TextView monthData = (TextView) findViewById(R.id.showData2);
 
         TextView filterBy = (TextView) findViewById(R.id.filterBy);

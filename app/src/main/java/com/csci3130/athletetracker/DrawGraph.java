@@ -43,12 +43,12 @@ public class DrawGraph extends Activity {
         ArrayList<Entry> yAxes = new ArrayList<>();
 
         double x = 0;
-        int numDataPoints = 200;
+        int numDataPoints = 31;
 
         Random rand = new Random();
 
         for (int i = 0; i < numDataPoints; i++) {
-            float point = i;
+            float point = rand.nextFloat()+80;
             x = x + 0.1;
             yAxes.add(new Entry(point, i));
             //xAxes.add(i, String.valueOf(x));
@@ -94,16 +94,16 @@ public class DrawGraph extends Activity {
 
         BarDataSet barDataSet = new BarDataSet(barEntries, "steps");
         double x = 0;
-        int numDataPoints = 100000;
+        int numDataPoints = 31;
 
         Random rand = new Random();
         float dummySteps;
 
         for (int i = 0; i < numDataPoints; i++) {
-            float point = i;
+            float point = rand.nextFloat()+5000;
             x = x + 0.1;
             dummySteps = rand.nextInt(1000);
-            barEntries.add(new BarEntry(dummySteps,i));
+            barEntries.add(new BarEntry(point,i));
             yAxes.add(new Entry(i, i));
             xAxes.add(i, String.valueOf(x));
         }
