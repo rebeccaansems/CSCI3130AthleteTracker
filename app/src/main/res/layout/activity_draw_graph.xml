@@ -14,9 +14,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/barChart"
-        tools:layout_editor_absoluteY="301dp"
-        app:layout_constraintHorizontal_bias="0.666">
+        app:layout_constraintTop_toBottomOf="@+id/barChart">
 
     </com.github.mikephil.charting.charts.LineChart>
 
@@ -24,11 +22,10 @@
         android:layout_width="379dp"
         android:layout_height="313dp"
         android:id="@+id/barChart"
-        app:layout_constraintRight_toLeftOf="@+id/lineChart"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/lineChart"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_bias="0.0">
+        app:layout_constraintRight_toRightOf="parent">
 
     </com.github.mikephil.charting.charts.BarChart>
 
