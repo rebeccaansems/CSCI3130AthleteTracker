@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.Description;
+import com.github.mikephil.charting.components.Legend;
+import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
@@ -21,6 +23,7 @@ import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class DrawGraph extends Activity {
 
@@ -35,7 +38,9 @@ public class DrawGraph extends Activity {
         drawStepsGraph();
     }
 
-
+    /**
+     * method to draw the line graph for the heart rate
+     */
     public void drawHeartRateGraph(){
         heartRateGraph = (LineChart) findViewById(R.id.lineChart);
 
@@ -48,9 +53,10 @@ public class DrawGraph extends Activity {
         Random rand = new Random();
 
         for (int i = 0; i < numDataPoints; i++) {
-            float point = rand.nextFloat()+80;
+            //float point = rand.nextFloat()+80;
+            int point = rand.nextInt((70)+1) + 80;
             x = x + 0.1;
-            yAxes.add(new Entry(point, i));
+            yAxes.add(new Entry(i, point));
             //xAxes.add(i, String.valueOf(x));
             for (int j = 0; j < 31; j++) {
                 xAxes.add(j, String.valueOf(j));
@@ -65,7 +71,7 @@ public class DrawGraph extends Activity {
 
         ArrayList<ILineDataSet> lineDataSets = new ArrayList<>();
 
-        LineDataSet lineDataSet1 = new LineDataSet(yAxes, "heart rate");
+        LineDataSet lineDataSet1 = new LineDataSet(yAxes, "Average heart rate per day for the month");
         lineDataSet1.setDrawCircles(false);
         lineDataSet1.setColor(Color.RED);
 
@@ -73,12 +79,16 @@ public class DrawGraph extends Activity {
 
         heartRateGraph.setData(new LineData(lineDataSets));
 
-        heartRateGraph.setVisibleXRangeMaximum(100f);
+        heartRateGraph.setVisibleYRange(0f,100f, YAxis.AxisDependency.LEFT);
+        //heartRateGraph.setVisibleXRangeMaximum(100f);
         Description description = new Description();
-        description.setText("Heart Rate Graph");
+        description.setText(" ");
         heartRateGraph.setDescription(description);
     }
 
+    /**
+     * method to draw the bar graph for the steps
+     */
     public void drawStepsGraph(){
         stepsGraph = (BarChart) findViewById(R.id.barChart);
 
@@ -86,39 +96,38 @@ public class DrawGraph extends Activity {
         ArrayList<Entry> yAxes = new ArrayList<>();
 
         ArrayList<BarEntry> barEntries = new ArrayList<>();
-        barEntries.add(new BarEntry(8f, 0));
-        barEntries.add(new BarEntry(4f, 1));
-        barEntries.add(new BarEntry(12f, 2));
-        barEntries.add(new BarEntry(2f, 3));
-        barEntries.add(new BarEntry(14f, 4));
 
-        BarDataSet barDataSet = new BarDataSet(barEntries, "steps");
         double x = 0;
         int numDataPoints = 31;
 
         Random rand = new Random();
-        float dummySteps;
 
         for (int i = 0; i < numDataPoints; i++) {
-            float point = rand.nextFloat()+5000;
+            //float point = rand.nextFloat()+5000;
+            int point = rand.nextInt(20000)+3000;
             x = x + 0.1;
-            dummySteps = rand.nextInt(1000);
-            barEntries.add(new BarEntry(point,i));
-            yAxes.add(new Entry(i, i));
-            xAxes.add(i, String.valueOf(x));
+            barEntries.add(new BarEntry(i,point));
+            yAxes.add(new Entry(point, i));
+            //xAxes.add(i, String.valueOf(x));
         }
+
+        BarDataSet barDataSet = new BarDataSet(barEntries, "Steps per day for the month");
+
 
         String [] xaxes = new String[xAxes.size()];
 
+        /*
         for (int i = 0; i < xAxes.size(); i++) {
             xaxes[i] = xAxes.get(i).toString();
         }
+        */
 
         stepsGraph.setData(new BarData(barDataSet));
 
-        stepsGraph.setVisibleXRangeMaximum(100f);
+        stepsGraph.setVisibleYRange(0f,25000f, YAxis.AxisDependency.LEFT);
+        //stepsGraph.setVisibleXRangeMaximum(100f);
         Description description = new Description();
-        description.setText("Steps Graph");
+        description.setText("");
         stepsGraph.setDescription(description);
 
     }
