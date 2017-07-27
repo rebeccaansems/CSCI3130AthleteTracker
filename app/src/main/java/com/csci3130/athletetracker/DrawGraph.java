@@ -103,7 +103,6 @@ public class DrawGraph extends Activity {
         Random rand = new Random();
 
         for (int i = 0; i < numDataPoints; i++) {
-            //float point = rand.nextFloat()+5000;
             int point = rand.nextInt(20000)+3000;
             x = x + 0.1;
             barEntries.add(new BarEntry(i,point));
@@ -115,12 +114,6 @@ public class DrawGraph extends Activity {
 
 
         String [] xaxes = new String[xAxes.size()];
-
-        /*
-        for (int i = 0; i < xAxes.size(); i++) {
-            xaxes[i] = xAxes.get(i).toString();
-        }
-        */
 
         stepsGraph.setData(new BarData(barDataSet));
 

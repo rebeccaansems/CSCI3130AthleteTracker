@@ -59,14 +59,15 @@ public class HistoricalData extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_historical_data2);
 
-        /*
-         * fill FireBase with random data.
-         */
+
 
 
         DatabaseReference Database = FirebaseDatabase.getInstance().getReference();
         final DatabaseReference mHistory = Database.child("HistoricalData");
 
+        /*
+         * fill FireBase with random data.
+         */
         /*
         mHistory.child("January");
         mHistory.child("February");
